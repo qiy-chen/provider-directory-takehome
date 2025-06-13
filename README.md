@@ -1,3 +1,7 @@
+# Archived Repository
+
+This repository has been archived and is no longer maintained.
+
 # THVC Provider Directory Frontend Challenge 
 
 TELUS Health Virtual Care (THVC) is an alternative way to access primary care health services in Canada. Think of it as a “virtual walk-in clinic”, but without any wait and better follow-up care. We provide on-demand primary care to more than 2.8 million Canadians.
