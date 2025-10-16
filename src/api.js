@@ -28,7 +28,7 @@ export const fetchProvider = (providerId) => {
 
 /**
  * Fetch all the providers to be displayed, in a minimal representation
- * @return {Promise<Array<{id: string, name: string, title: string, location: string, avatarUrl: string, bio: string}>>>}
+ * @return {Promise<Array<{id: string, name: string, title: string, location: string, avatarUrl: string, bio: string, availabilty: string}>>}>}
  */
 export const fetchProviders = () => {
   return new Promise(

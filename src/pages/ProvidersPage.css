@@ -1,0 +1,67 @@
+.ProvidersPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.ProvidersHeader {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.ProvidersTitle {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.ProvidersSubtitle {
+  font-size: 20px;
+  color: #657178;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.ProvidersLocations {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.ProvidersDivider {
+  width: 100%;
+  height: 2px;
+  background-color: #dfe1e6;
+}
+
+.ProvidersResultsFrame {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  background-color: #f6f7f7;
+}
+
+.ProvidersResults {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+}
+
+.ProvidersCount {
+  font-size: 16px;
+  color: #3f4145;
+  margin-bottom: 15px;
+}
+
+.ProvidersCountNumber {
+  color: #1c1e24;
+}
+
+.ProvidersList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

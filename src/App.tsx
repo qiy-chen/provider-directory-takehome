@@ -6,11 +6,13 @@ import { PartialProvider } from "./types";
 
 function App() {
   // Samples of API requests
-  const [providers, setProviders] = React.useState<PartialProvider[]>([]);
+  const [providers, setProviders] = React.useState<PartialProvider[] | null>(
+    null
+  );
   React.useEffect(() => {
     fetchProviders().then((providers: PartialProvider[]) => {
       console.log(providers);
-      setProviders({ ...providers });
+      setProviders([...providers]);
     });
     fetchProvider("1").then(console.log);
   }, []);

@@ -1,0 +1,17 @@
+.Chip {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: solid;
+  border-radius: 16px;
+  border-color: #eeeeee;
+  border-width: 1px;
+  font-size: 14px;
+  margin: 2px;
+}
+
+.Chip.selected {
+  background-color: #e0e4fa;
+  border-color: #6277f0;
+  color: #2d3a7b;
+}
