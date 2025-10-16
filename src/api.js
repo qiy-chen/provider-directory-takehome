@@ -28,7 +28,7 @@ export const fetchProvider = (providerId) => {
 
 /**
  * Fetch all the providers to be displayed, in a minimal representation
- * @return {Promise<Array<{id: string, name: string, title: string, avatarUrl: string, bio: string}>>>}
+ * @return {Promise<Array<{id: string, name: string, title: string, location: string, avatarUrl: string, bio: string}>>>}
  */
 export const fetchProviders = () => {
   return new Promise(
@@ -39,8 +39,8 @@ export const fetchProviders = () => {
   )
 };
 
-const makePartialRepresentation = ({id, name, title, avatarUrl, bio, availabilty}) => ({
-  id, name, title, avatarUrl, bio, availabilty
+const makePartialRepresentation = ({id, name, title, avatarUrl, location, bio, availabilty}) => ({
+  id, name, title, avatarUrl, location, bio, availabilty
 });
 
 const fullDataset = [
