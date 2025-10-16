@@ -3,6 +3,7 @@ import "./ProvidersPage.css";
 import { PartialProvider } from "../types";
 import { useState } from "react";
 import ProviderResultCard from "../components/ProviderResultCard";
+import Loading from "../components/Loading";
 
 const LOCATION_TO_ABBR: { [fullName: string]: string } = {
   Ontario: "ON",
@@ -50,10 +51,11 @@ export default function ProvidersPage({
         </div>
       </div>
       <div className="ProvidersDivider" />
-      {providers === null ? (
-        <div>Loading</div>
-      ) : (
-        <div className="ProvidersResultsFrame">
+
+      <div className="ProvidersResultsFrame">
+        {providers === null ? (
+          <Loading />
+        ) : (
           <div className="ProvidersResults">
             <div className="ProvidersCount">
               <span className="ProvidersCountNumber">
@@ -69,8 +71,8 @@ export default function ProvidersPage({
               ))}
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

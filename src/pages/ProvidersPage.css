@@ -3,24 +3,26 @@
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+  min-height: 100vh;
 }
 
 .ProvidersHeader {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin-bottom: 20px;
+  width: 40%;
+  margin: 50px 0 50px 0;
 }
 
 .ProvidersTitle {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 600;
 }
 
 .ProvidersSubtitle {
-  font-size: 20px;
+  font-size: 14.8px;
   color: #657178;
-  margin-top: 5px;
+  margin-top: 15px;
   margin-bottom: 25px;
 }
 
@@ -40,24 +42,28 @@
   display: flex;
   align-items: center;
   width: 100%;
+  flex: 1;
   flex-direction: column;
   background-color: #f6f7f7;
+  padding: 20px 0 50px 0;
 }
 
 .ProvidersResults {
   display: flex;
-  width: 80%;
+  width: 50%;
   flex-direction: column;
+  gap: 10px;
 }
 
 .ProvidersCount {
-  font-size: 16px;
+  font-size: 14px;
   color: #3f4145;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .ProvidersCountNumber {
   color: #1c1e24;
+  font-weight: 600;
 }
 
 .ProvidersList {

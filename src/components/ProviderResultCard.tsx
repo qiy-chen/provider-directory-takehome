@@ -19,7 +19,7 @@ export default function ProviderResultCard({
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <div className="CardProviderResultCard">
-        <div className="ProviderHeader">
+        <div className="CardProviderHeader">
           {provider.avatarUrl ? (
             <img
               className="CardProviderAvatar"

@@ -1,6 +1,5 @@
 .CardProviderResultCard {
-  padding: 30px;
-  margin-bottom: 15px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -10,12 +9,20 @@
 .CardProviderHeader {
   display: flex;
   align-items: center;
+  flex-direction: row;
 }
 
 .CardProviderInfo {
   margin-left: 15px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.CardProviderAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
 
 .CardProviderAvatarPlaceholder {
@@ -25,6 +32,17 @@
   background-color: #dfe1e6;
 }
 
+.CardProviderName {
+  color: #1c1e24;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.CardProviderTitle {
+  color: #6e7178;
+  font-size: 12px;
+}
+
 .CardProviderBio {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -32,11 +50,16 @@
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
+  color: #6e7178;
+  size: 14px;
 }
 
 .CardProviderAvailability {
-  display: inline-flex;
-  background-color: #e0e4fa;
+  background-color: #eff1fe;
   border-radius: 20px;
-  padding: 5px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 15px;
+  color: #3f4145;
+  align-self: flex-start;
 }
