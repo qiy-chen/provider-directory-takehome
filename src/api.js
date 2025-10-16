@@ -8,7 +8,7 @@ const REQUEST_RESPONSE_TIME = 500
 /**
  * Fetch a a given provider by ID, and get the complete representation
  * @param providerId - The ID of the provider to "fetch"
- * @return {Promise<{id: string, name: string, title: string, avatarUrl: string, bio: string, }>}
+ * @return {Promise<import("./types").Provider>}
  */
 export const fetchProvider = (providerId) => {
   return new Promise(
@@ -28,7 +28,7 @@ export const fetchProvider = (providerId) => {
 
 /**
  * Fetch all the providers to be displayed, in a minimal representation
- * @return {Promise<Array<{id: string, name: string, title: string, location: string, avatarUrl: string, bio: string, availabilty: string}>>}>}
+ * @return {Promise<Array<import("./types").PartialProvider>>}>>}>}
  */
 export const fetchProviders = () => {
   return new Promise(
