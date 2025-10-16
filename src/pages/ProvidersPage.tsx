@@ -50,7 +50,7 @@ export default function ProvidersPage({
         </div>
       </div>
       <div className="ProvidersDivider" />
-      {!providers ? (
+      {providers === null ? (
         <div>Loading</div>
       ) : (
         <div className="ProvidersResultsFrame">

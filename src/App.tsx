@@ -3,6 +3,8 @@ import "./App.css";
 import { fetchProviders, fetchProvider } from "./api";
 import ProvidersPage from "./pages/ProvidersPage";
 import { PartialProvider } from "./types";
+import { Switch, Route } from "react-router-dom";
+import ProviderDetails from "./pages/ProviderDetails";
 
 function App() {
   // Samples of API requests
@@ -17,7 +19,16 @@ function App() {
     fetchProvider("1").then(console.log);
   }, []);
 
-  return <ProvidersPage providers={providers} />;
+  return (
+    <Switch>
+      <Route path="/provider/:id">
+        <ProviderDetails />
+      </Route>
+      <Route path="/">
+        <ProvidersPage providers={providers} />
+      </Route>
+    </Switch>
+  );
 }
 
 export default App;
