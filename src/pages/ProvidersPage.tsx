@@ -61,7 +61,8 @@ export default function ProvidersPage({
               <span className="ProvidersCountNumber">
                 {selectedProviders!.length + " "}
               </span>
-              providers {selectedLocation !== null && ` in ${selectedLocation}`}
+              provider{selectedProviders!.length > 1 && "s"}
+              {selectedLocation !== null && ` in ${selectedLocation}`}
             </div>
             <div className="ProvidersList">
               {selectedProviders!.map((provider) => (

@@ -1,22 +1,25 @@
 import React from "react";
-import "./App.css";
-import { fetchProviders, fetchProvider } from "./api";
+import { fetchProviders } from "./api";
 import ProvidersPage from "./pages/ProvidersPage";
 import { PartialProvider } from "./types";
 import { Switch, Route } from "react-router-dom";
 import ProviderDetails from "./pages/ProviderDetails";
 
 function App() {
-  // Samples of API requests
   const [providers, setProviders] = React.useState<PartialProvider[] | null>(
     null
   );
   React.useEffect(() => {
     fetchProviders().then((providers: PartialProvider[]) => {
-      console.log(providers);
+      // sort providers by availability , then by name
+      providers.sort((a, b) => {
+        if (a.availabilty === b.availabilty) {
+          return a.name.localeCompare(b.name);
+        }
+        return a.availabilty === "tomorrow" ? -1 : 1;
+      });
       setProviders([...providers]);
     });
-    fetchProvider("1").then(console.log);
   }, []);
 
   return (
