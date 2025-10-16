@@ -18,28 +18,28 @@ export default function ProviderResultCard({
       to={`/provider/${provider.id}`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
-      <div className="ProviderResultCard">
+      <div className="CardProviderResultCard">
         <div className="ProviderHeader">
           {provider.avatarUrl ? (
             <img
-              className="ProviderAvatar"
+              className="CardProviderAvatar"
               src={provider.avatarUrl}
               alt={`${provider.name}'s avatar`}
             />
           ) : (
-            <div className="ProviderAvatarPlaceholder" />
+            <div className="CardProviderAvatarPlaceholder" />
           )}
-          <div className="ProviderInfo">
-            <div className="ProviderName">
+          <div className="CardProviderInfo">
+            <div className="CardProviderName">
               {getFullTitle(provider.name, provider.title)}
             </div>
-            <div className="ProviderTitle">
+            <div className="CardProviderTitle">
               {getProviderProfession(provider.title)}
             </div>
           </div>
         </div>
-        <div className="ProviderBio">{provider.bio}</div>
-        <div className="ProviderAvailability">
+        <div className="CardProviderBio">{provider.bio}</div>
+        <div className="CardProviderAvailability">
           {AVAILABILITY_TO_LABEL[provider.availabilty]}
         </div>
       </div>

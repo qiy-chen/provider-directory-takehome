@@ -1,4 +1,4 @@
-.ProviderResultCard {
+.CardProviderResultCard {
   padding: 30px;
   margin-bottom: 15px;
   display: flex;
@@ -7,25 +7,25 @@
   gap: 15px;
 }
 
-.ProviderHeader {
+.CardProviderHeader {
   display: flex;
   align-items: center;
 }
 
-.ProviderInfo {
+.CardProviderInfo {
   margin-left: 15px;
   display: flex;
   flex-direction: column;
 }
 
-.ProviderAvatarPlaceholder {
+.CardProviderAvatarPlaceholder {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background-color: #dfe1e6;
 }
 
-.ProviderBio {
+.CardProviderBio {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -34,7 +34,7 @@
   -webkit-box-orient: vertical;
 }
 
-.ProviderAvailability {
+.CardProviderAvailability {
   display: inline-flex;
   background-color: #e0e4fa;
   border-radius: 20px;

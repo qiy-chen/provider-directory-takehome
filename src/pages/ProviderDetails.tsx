@@ -49,8 +49,14 @@ export default function ProviderDetails() {
                 <div className="ProviderTitle">
                   {getProviderProfession(provider.title)}
                 </div>
-                <div className={`ProviderBio${bioExpanded ? " expanded" : ""}`}>
-                  {provider.bio}
+                <div className="ProviderBio">
+                  {provider.bio.slice(
+                    0,
+                    bioExpanded ? undefined : lenghtyThreshold
+                  ) +
+                    (bioExpanded || provider.bio.length <= lenghtyThreshold
+                      ? ""
+                      : "...")}
                 </div>
                 {provider.bio.length > 300 && (
                   <div
