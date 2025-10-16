@@ -1,0 +1,29 @@
+.ProviderInfoItemFrame {
+  display: flex;
+  flex-direction: row;
+}
+
+.ProviderInfoItemIcon {
+  width: 32px;
+  height: 32px;
+  padding: 10px;
+  background-color: #fafafa;
+  margin-right: 10px;
+}
+
+.ProviderInfoItemInformation {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ProviderInfoItemLabel {
+  font-size: 12px;
+  color: #6e7178;
+}
+
+.ProviderInfoItemValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3f4145;
+}

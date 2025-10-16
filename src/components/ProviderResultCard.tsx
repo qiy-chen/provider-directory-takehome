@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { PartialProvider } from "../types";
 import "./ProviderResultCard.css";
 import { getFullTitle, getProviderProfession } from "../utils";
+import { PLACEHOLDER_AVATAR_URL } from "../constants";
 
 const AVAILABILITY_TO_LABEL: { [fullName: string]: string } = {
   tomorrow: "Available tomorrow",
@@ -20,15 +21,16 @@ export default function ProviderResultCard({
     >
       <div className="CardProviderResultCard">
         <div className="CardProviderHeader">
-          {provider.avatarUrl ? (
-            <img
-              className="CardProviderAvatar"
-              src={provider.avatarUrl}
-              alt={`${provider.name}'s avatar`}
-            />
-          ) : (
-            <div className="CardProviderAvatarPlaceholder" />
-          )}
+          <img
+            className="CardProviderAvatar"
+            src={
+              provider.avatarUrl === ""
+                ? PLACEHOLDER_AVATAR_URL
+                : provider.avatarUrl
+            }
+            alt={`${provider.name}'s avatar`}
+          />
+
           <div className="CardProviderInfo">
             <div className="CardProviderName">
               {getFullTitle(provider.name, provider.title)}

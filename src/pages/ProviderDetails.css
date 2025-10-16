@@ -2,12 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #f6f7f7;
+  min-height: 100vh;
+  padding: 10px;
 }
 
 .ProviderDetailsContainer {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 70%;
   gap: 20px;
   padding: 20px;
 }
@@ -18,11 +21,17 @@
   gap: 20px;
 }
 
-.ProviderAvatarPlaceholderLarge {
+.ProviderAvatarLarge {
   display: flex;
   width: 300px;
   height: 300px;
-  background-color: #dfe1e6;
+}
+
+.ProviderInfoFrame {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
 }
 
 .ProviderInfo {
@@ -30,9 +39,51 @@
   flex-direction: column;
   gap: 15px;
   flex: 1;
+  background-color: #ffffff;
+  padding: 30px;
+}
+
+.ProviderNameTitle {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.ProviderName {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1c1e24;
+}
+
+.ProviderTitle {
+  font-weight: 600;
+  font-size: 14px;
+  color: #6e7178;
 }
 
 .ProviderBio {
   -webkit-line-clamp: unset;
   line-clamp: unset;
+  color: #6e7178;
+  font-size: 14px;
+}
+
+.ProviderBioToggle {
+  color: #6277f0;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ProviderBookButton {
+  background-color: #4b286d;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 32px;
+  text-align: center;
+  cursor: pointer;
 }

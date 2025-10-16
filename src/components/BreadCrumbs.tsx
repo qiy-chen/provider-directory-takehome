@@ -1,22 +1,28 @@
+import { Link } from "react-router-dom";
 import { BreadCrumbItem } from "../types";
+import "./BreadCrumbs.css";
+import { IoIosArrowForward } from "react-icons/io";
 
 export default function BreadCrumbs({ items }: { items: BreadCrumbItem[] }) {
   return (
-    <nav className="BreadCrumb">
+    <div className="BreadCrumbs">
       {items.map((item, index) => (
-        <span key={index} className="BreadCrumbItem">
+        <div key={index} className="BreadCrumbs">
           {item.href ? (
-            <a href={item.href} className="BreadCrumbLink">
+            <Link
+              to={item.href}
+              style={{ textDecoration: "none", color: "#6E7178" }}
+            >
               {item.label}
-            </a>
+            </Link>
           ) : (
-            <span className="BreadCrumbCurrent">{item.label}</span>
+            <div className="BreadCrumbsCurrent">{item.label}</div>
           )}
           {index < items.length - 1 && (
-            <span className="BreadCrumbSeparator">/</span>
+            <IoIosArrowForward style={{ color: "#C6C9CF" }} />
           )}
-        </span>
+        </div>
       ))}
-    </nav>
+    </div>
   );
 }

@@ -1,18 +1,22 @@
+import "./ProviderInfoItem.css";
+
 export default function ProviderInfoItem({
   label,
   value,
-  icon,
+  iconPath,
 }: {
   label: string;
   value: string;
-  icon?: React.ReactNode;
+  iconPath?: string;
 }) {
   return (
-    <div className="ProviderInfoFrame">
-      {icon && <div className="ProviderInfoIcon">{icon}</div>}
-      <div className="ProviderInformation">
-        <div className="ProviderInfoLabel">{label}</div>
-        <div className="ProviderInfoValue">{value}</div>
+    <div className="ProviderInfoItemFrame">
+      {iconPath && (
+        <img className="ProviderInfoItemIcon" src={iconPath} alt="label" />
+      )}
+      <div className="ProviderInfoItemInformation">
+        <div className="ProviderInfoItemLabel">{label}</div>
+        <div className="ProviderInfoItemValue">{value}</div>
       </div>
     </div>
   );

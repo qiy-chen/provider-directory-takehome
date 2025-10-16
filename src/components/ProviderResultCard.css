@@ -16,20 +16,13 @@
   margin-left: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .CardProviderAvatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-}
-
-.CardProviderAvatarPlaceholder {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #dfe1e6;
 }
 
 .CardProviderName {

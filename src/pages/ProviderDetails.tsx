@@ -6,6 +6,10 @@ import ProviderInfoItem from "../components/ProviderInfoItem";
 import { getFullTitle, getProviderProfession } from "../utils";
 import BreadCrumbs from "../components/BreadCrumbs";
 import "./ProviderDetails.css";
+import Loading from "../components/Loading";
+import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
+import { PLACEHOLDER_AVATAR_URL } from "../constants";
 
 export default function ProviderDetails() {
   const { id } = useParams<{ id: string }>();
@@ -20,35 +24,38 @@ export default function ProviderDetails() {
     });
   }, [id]);
   return (
-    <>
+    <div className="ProviderDetailsFrame">
       {provider === null ? (
-        <div>Loading</div>
+        <Loading />
       ) : (
-        <div className="ProviderDetailsFrame">
-          <div className="ProviderDetailsContainer">
-            <BreadCrumbs
-              items={[
-                { label: "Providers", href: "/" },
-                { label: getFullTitle(provider.name, provider.title) },
-              ]}
+        <div className="ProviderDetailsContainer">
+          <BreadCrumbs
+            items={[
+              { label: "Mental Wellness", href: "/" },
+              { label: getFullTitle(provider.name, provider.title) },
+            ]}
+          />
+          <div className="ProviderDetails">
+            <img
+              className="ProviderAvatarLarge"
+              src={
+                provider.avatarUrl === ""
+                  ? PLACEHOLDER_AVATAR_URL
+                  : provider.avatarUrl
+              }
+              alt={`${provider.name}'s avatar`}
             />
-            <div className="ProviderDetails">
-              {provider.avatarUrl ? (
-                <img
-                  className="ProviderAvatarLarge"
-                  src={provider.avatarUrl}
-                  alt={`${provider.name}'s avatar`}
-                />
-              ) : (
-                <div className="ProviderAvatarPlaceholderLarge" />
-              )}
+            <div className="ProviderInfoFrame">
               <div className="ProviderInfo">
-                <div className="ProviderName">
-                  {getFullTitle(provider.name, provider.title)}
+                <div className="ProviderNameTitle">
+                  <div className="ProviderName">
+                    {getFullTitle(provider.name, provider.title)}
+                  </div>
+                  <div className="ProviderTitle">
+                    {getProviderProfession(provider.title)}
+                  </div>
                 </div>
-                <div className="ProviderTitle">
-                  {getProviderProfession(provider.title)}
-                </div>
+
                 <div className="ProviderBio">
                   {provider.bio.slice(
                     0,
@@ -64,23 +71,25 @@ export default function ProviderDetails() {
                     onClick={() => setBioExpanded(!bioExpanded)}
                   >
                     {bioExpanded ? "Read less" : "Read more"}
+                    {bioExpanded ? <IoIosArrowUp /> : <IoIosArrowDown />}
                   </div>
                 )}
-                <div className="ProviderDivider" />
+              </div>
+              <div className="ProviderInfo">
                 <ProviderInfoItem
                   label="Location"
                   value={provider.location}
-                  icon={null}
+                  iconPath={"/icons/location.png"}
                 />
                 <ProviderInfoItem
                   label="Education"
                   value={provider.education}
-                  icon={null}
+                  iconPath={"/icons/education.png"}
                 />
                 <ProviderInfoItem
                   label="Languages"
                   value={provider.languages.join(", ")}
-                  icon={null}
+                  iconPath={"/icons/language.png"}
                 />
                 <div className="ProviderBookButton">Book with us</div>
               </div>
@@ -88,6 +97,6 @@ export default function ProviderDetails() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
